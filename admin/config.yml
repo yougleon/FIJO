@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: principal
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "actualites"
+    label: "Actualités"
+    folder: "_actualites"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  - name: "parametres"
+    label: "Paramètres du site"
+    files:
+      - label: "Informations générales"
+        name: "general"
+        file: "_data/general.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Téléphone 1", name: "tel1", widget: "string" }
+          - { label: "Téléphone 2", name: "tel2", widget: "string" }
+          - { label: "Adresse", name: "adresse", widget: "string" }
