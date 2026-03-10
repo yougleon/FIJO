@@ -1,1 +1,534 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)file:///C:/Users/HP/Downloads/index.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fondation Josué 1:8 – Tout Par la Bible, Avec la Bible, Selon la Bible</title>
+  <link href="./Fondation Josué 1_8 – Tout Par la Bible, Avec la Bible, Selon la Bible_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --blue:        #1a3a8c;
+      --blue-dark:   #0f2460;
+      --blue-mid:    #1e4db7;
+      --orange:      #e8640a;
+      --orange-light:#f5892a;
+      --gold:        #f5a623;
+      --cream:       #fdf9f3;
+      --white:       #ffffff;
+      --text:        #1e1e1e;
+      --muted:       #5a5a5a;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.75; }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--blue-dark); padding: 0.45rem 2rem;
+      display: flex; justify-content: flex-end; gap: 2rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.65);
+    }
+    .topbar a { color: var(--gold); text-decoration: none; }
+    .topbar span { display: flex; align-items: center; gap: 0.4rem; }
+
+    /* HEADER */
+    header { position: sticky; top: 0; z-index: 200; background: var(--white); box-shadow: 0 2px 20px rgba(26,58,140,0.12); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 82px; }
+    .logo-block { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+    .logo-emblem {
+      width: 62px; height: 62px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+      border: 3px solid var(--orange);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .logo-emblem-inner { text-align: center; line-height: 1.2; }
+    .logo-emblem-inner b { display: block; font-family: 'Cinzel', serif; font-size: 0.58rem; color: var(--gold); letter-spacing: 0.05em; }
+    .logo-emblem-inner span { font-size: 1.3rem; }
+    .logo-title .main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: var(--blue); letter-spacing: 0.04em; display: block; }
+    .logo-title .main em { color: var(--orange); font-style: normal; }
+    .logo-title .sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; color: var(--orange); display: block; }
+    nav { display: flex; align-items: center; gap: 0.2rem; }
+    nav a { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); text-decoration: none; padding: 0.5rem 0.85rem; border-radius: 3px; transition: background .25s, color .25s; }
+    nav a:hover { background: var(--blue); color: var(--white); }
+    nav .cta { background: var(--orange); color: var(--white) !important; padding: 0.55rem 1.3rem; margin-left: 0.4rem; }
+    nav .cta:hover { background: var(--orange-light); }
+
+    /* HERO */
+    #hero {
+      background:
+        linear-gradient(135deg, rgba(15,36,96,0.93) 0%, rgba(26,58,140,0.78) 55%, rgba(232,100,10,0.55) 100%),
+        url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1600&q=80') center/cover no-repeat;
+      min-height: 94vh; display: flex; align-items: center;
+      padding: 6rem 2rem 4rem; position: relative; overflow: hidden;
+    }
+    #hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 7px; background: linear-gradient(to right, var(--gold), var(--orange), var(--blue)); }
+    #hero::after { content: '"1:8"'; position: absolute; right: -1rem; bottom: 2rem; font-family: 'Cinzel', serif; font-size: 10rem; font-weight: 700; color: rgba(255,255,255,0.04); pointer-events: none; white-space: nowrap; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+    .hero-text { animation: fadeUp 1s ease both; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.4); color: var(--gold); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 1.4rem; font-weight: 700; }
+    h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 1.2rem; }
+    h1 .accent { color: var(--gold); display: block; font-size: 0.72em; margin-top: 0.4rem; line-height: 1.4; }
+    .hero-slogan { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: rgba(255,255,255,0.9); border-left: 4px solid var(--orange); padding-left: 1.2rem; margin-bottom: 1.4rem; line-height: 1.55; }
+    .hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.65); font-weight: 300; margin-bottom: 2.5rem; max-width: 500px; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-orange { background: var(--orange); color: var(--white); padding: 0.9rem 2rem; font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; text-decoration: none; border-radius: 3px; transition: background .3s, transform .2s; display: inline-block; }
+    .btn-orange:hover { background: var(--orange-light); transform: translateY(-2px); }
+    .btn-outline { border: 2px solid rgba(255,255,255,0.45); color: var(--white); padding: 0.9rem 2rem; font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 3px; transition: border-color .3s, background .3s; }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(245,166,35,0.08); }
+
+    .hero-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 2.5rem; animation: fadeUp 1s 0.35s ease both; opacity: 0; }
+    .hero-card-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--gold); text-align: center; margin-bottom: 1.5rem; }
+    .verse-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(245,166,35,0.3); border-radius: 6px; padding: 1.4rem; margin-bottom: 1.4rem; }
+    .verse-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.92); line-height: 1.7; margin-bottom: 0.6rem; }
+    .verse-box cite { font-size: 0.76rem; color: var(--gold); letter-spacing: 0.1em; font-style: normal; font-weight: 700; }
+    .hero-stats { display: flex; justify-content: space-around; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .hstat strong { display: block; font-family: 'Cinzel', serif; font-size: 1.7rem; color: var(--gold); line-height: 1; }
+    .hstat small { font-size: 0.66rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* GÉNÉRIQUE */
+    section { padding: 5.5rem 2rem; }
+    .inner { max-width: 1200px; margin: 0 auto; }
+    .sec-tag { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.7rem; }
+    .sec-tag::before, .sec-tag::after { content: ''; display: block; height: 1px; width: 26px; background: var(--orange); }
+    h2 { font-family: 'Cinzel', serif; font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--blue); line-height: 1.2; margin-bottom: 1rem; }
+    h2 em { color: var(--orange); font-style: normal; }
+    .lead { font-size: 0.95rem; color: var(--muted); font-weight: 300; max-width: 640px; }
+
+    /* PRÉSENTATION */
+    #presentation { background: var(--white); }
+    .pres-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .pres-img { position: relative; }
+    .pres-img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; display: block; position: relative; z-index: 1; }
+    .pres-img::before { content: ''; position: absolute; top: -18px; left: -18px; right: 18px; bottom: 18px; border: 2px solid var(--orange); border-radius: 6px; z-index: 0; }
+    .ref-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; z-index: 2; background: var(--blue); color: var(--white); padding: 1.3rem 1.5rem; border-radius: 6px; max-width: 195px; text-align: center; }
+    .ref-badge p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.4rem; }
+    .ref-badge cite { font-size: 0.7rem; color: var(--gold); font-style: normal; letter-spacing: 0.1em; font-weight: 700; }
+    .pres-content p { font-size: 0.95rem; color: var(--muted); font-weight: 300; margin-bottom: 1.1rem; }
+    .identity-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.6rem 0; }
+    .itag { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(26,58,140,0.07); border: 1px solid rgba(26,58,140,0.15); color: var(--blue); font-size: 0.76rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 100px; letter-spacing: 0.03em; }
+    .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .pillar { background: var(--cream); border-left: 3px solid var(--orange); padding: 1rem 1.2rem; border-radius: 0 4px 4px 0; }
+    .pillar h4 { font-family: 'Cinzel', serif; font-size: 0.76rem; color: var(--blue); letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+    .pillar p { font-size: 0.82rem !important; margin: 0 !important; color: var(--muted); font-weight: 300; }
+
+    /* OFFP */
+    #offp { background: var(--cream); }
+    .offp-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 5rem; align-items: start; }
+    .offp-main h3 { font-family: 'Cinzel', serif; font-size: 1.45rem; font-weight: 700; color: var(--blue); margin-bottom: 0.3rem; }
+    .offp-slogan { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--orange); margin-bottom: 1.4rem; display: block; }
+    .offp-main p { font-size: 0.94rem; color: var(--muted); font-weight: 300; margin-bottom: 1rem; }
+    .offp-quote { background: var(--blue); color: var(--white); border-radius: 8px; padding: 2rem; margin: 1.8rem 0; position: relative; overflow: hidden; }
+    .offp-quote::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 6rem; color: rgba(245,166,35,0.15); position: absolute; top: -0.5rem; left: 1rem; line-height: 1; pointer-events: none; }
+    .offp-quote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.08rem; line-height: 1.7; color: rgba(255,255,255,0.92); position: relative; z-index: 1; }
+    .fondements { margin-top: 1.5rem; }
+    .fondements h4 { font-family: 'Cinzel', serif; font-size: 0.82rem; color: var(--orange); letter-spacing: 0.1em; margin-bottom: 1rem; text-transform: uppercase; }
+    .fonde-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.9rem; background: var(--white); padding: 0.9rem 1.1rem; border-radius: 6px; }
+    .fonde-ref { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 700; color: var(--gold); background: var(--blue); padding: 0.3rem 0.6rem; border-radius: 4px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.04em; }
+    .fonde-item p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--text); margin: 0; }
+
+    .offp-side { display: flex; flex-direction: column; gap: 1.8rem; }
+    .side-block { background: var(--white); border-radius: 8px; padding: 1.8rem; box-shadow: 0 4px 20px rgba(26,58,140,0.07); }
+    .side-block h4 { font-family: 'Cinzel', serif; font-size: 0.87rem; font-weight: 700; color: var(--blue); letter-spacing: 0.07em; margin-bottom: 1.1rem; padding-bottom: 0.7rem; border-bottom: 2px solid var(--orange); }
+    .crit-list { list-style: none; }
+    .crit-list li { display: flex; gap: 0.8rem; align-items: flex-start; font-size: 0.87rem; color: var(--muted); font-weight: 300; padding: 0.5rem 0; border-bottom: 1px solid rgba(26,58,140,0.06); }
+    .crit-list li:last-child { border-bottom: none; }
+    .crit-list li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+    .contrib-box { background: linear-gradient(135deg, var(--blue), var(--blue-mid)); color: var(--white); border-radius: 6px; padding: 1.2rem; margin-top: 1rem; text-align: center; }
+    .contrib-box strong { font-family: 'Cinzel', serif; font-size: 1.6rem; color: var(--gold); display: block; margin-bottom: 0.3rem; }
+    .contrib-box span { font-size: 0.78rem; opacity: 0.75; }
+    .financement-text { font-size: 0.87rem; color: var(--muted); font-weight: 300; line-height: 1.75; }
+
+    /* VISION */
+    #vision { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #1a5a9c 100%); padding: 5.5rem 2rem; position: relative; overflow: hidden; }
+    #vision::before { content: '✝'; position: absolute; right: 4%; top: 50%; transform: translateY(-50%); font-size: 20rem; color: rgba(255,255,255,0.03); pointer-events: none; }
+    #vision .inner { position: relative; z-index: 1; }
+    #vision .sec-tag { color: var(--gold); }
+    #vision .sec-tag::before, #vision .sec-tag::after { background: var(--gold); }
+    #vision h2 { color: var(--white); }
+    #vision h2 em { color: var(--gold); }
+    .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+    .vision-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 2rem; transition: border-color .3s, background .3s; }
+    .vision-card:hover { border-color: var(--gold); background: rgba(245,166,35,0.06); }
+    .vision-card .vicon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+    .vision-card h3 { font-family: 'Cinzel', serif; font-size: 0.93rem; color: var(--gold); letter-spacing: 0.07em; margin-bottom: 0.8rem; }
+    .vision-card p { font-size: 0.88rem; color: rgba(255,255,255,0.62); font-weight: 300; line-height: 1.7; }
+    .verset-band { margin-top: 3rem; text-align: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(245,166,35,0.2); border-radius: 8px; padding: 2.5rem; }
+    .verset-band .vt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.2rem, 3vw, 1.9rem); color: var(--white); line-height: 1.6; margin-bottom: 1rem; }
+    .verset-band .vref { font-family: 'Cinzel', serif; font-size: 0.93rem; color: var(--gold); letter-spacing: 0.15em; }
+
+    /* CONTACT */
+    #contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; }
+    .contact-info p { font-size: 0.93rem; color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
+    .cdet { display: flex; gap: 1rem; margin-bottom: 1.3rem; align-items: flex-start; }
+    .cdet-icon { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--orange)); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; color: var(--white); }
+    .cdet-text strong { display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.2rem; font-weight: 700; }
+    .cdet-text span { font-size: 0.92rem; color: var(--muted); font-weight: 300; }
+    .contact-form { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 8px 40px rgba(26,58,140,0.08); }
+    .contact-form h3 { font-family: 'Cinzel', serif; font-size: 1.05rem; color: var(--blue); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 2px solid var(--orange); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.1rem; }
+    label { font-size: 0.69rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); }
+    input, textarea, select { padding: 0.8rem 1rem; border: 1px solid #dde3f0; background: var(--cream); font-family: 'Open Sans', sans-serif; font-size: 0.91rem; color: var(--text); border-radius: 4px; outline: none; transition: border-color .3s, box-shadow .3s; width: 100%; }
+    input:focus, textarea:focus, select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,58,140,0.08); }
+    textarea { resize: vertical; min-height: 120px; }
+    .btn-send { width: 100%; background: linear-gradient(135deg, var(--blue), var(--blue-mid)); color: var(--white); padding: 1rem; border: none; font-family: 'Cinzel', serif; font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; border-radius: 4px; cursor: pointer; transition: opacity .3s, transform .2s; margin-top: 0.5rem; }
+    .btn-send:hover { opacity: 0.88; transform: translateY(-2px); }
+    #form-success { display: none; text-align: center; color: #1a6e3c; background: #eaf7f0; border: 1px solid #a3d9b8; padding: 0.9rem; border-radius: 4px; font-size: 0.87rem; margin-top: 1rem; }
+
+    /* FOOTER */
+    footer { background: var(--blue-dark); color: rgba(255,255,255,0.5); }
+    .footer-stripe { height: 5px; background: linear-gradient(to right, var(--gold), var(--orange), var(--blue)); }
+    .footer-body { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 2rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 2rem; }
+    .fbrand p { font-size: 0.83rem; font-weight: 300; line-height: 1.8; margin-top: 1rem; max-width: 255px; }
+    .fbrand .logo-title .main { color: var(--white); font-size: 0.96rem; }
+    .fcol h5 { font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+    .fcol a { display: block; color: rgba(255,255,255,0.42); text-decoration: none; font-size: 0.83rem; font-weight: 300; margin-bottom: 0.5rem; transition: color .3s; }
+    .fcol a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; }
+    .fverse { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; color: rgba(255,255,255,0.28); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero-inner, .pres-grid, .offp-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-card { display: none; }
+      .vision-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      nav a:not(.cta) { display: none; }
+    }
+    @media (max-width: 600px) {
+      .pillars, .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 0.6rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>📞 (+226) 72 84 84 55 / 74 42 95 74</span>
+  <span>✉️ <a href="file:///C:/cdn-cgi/l/email-protection#c5a3aaaba1a4b1acaaabafaab6b0a0f4fd85a2a8a4aca9eba6aaa8"><span class="__cf_email__" data-cfemail="e88e87868c899c81878682879b9d8dd9d0a88f85898184c68b8785">[email&nbsp;protected]</span></a></span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo-block" href="file:///C:/Users/HP/Downloads/index.html#">
+      <div class="logo-emblem">
+        <div class="logo-emblem-inner">
+          <b>FJ 1:8</b>
+          <span>📖</span>
+        </div>
+      </div>
+      <div class="logo-title">
+        <span class="main">FONDATION JOSUÉ <em>1:8</em></span>
+        <span class="sub">Tout par la Bible, avec la Bible, selon la Bible</span>
+      </div>
+    </a>
+    <nav>
+      <a href="file:///C:/Users/HP/Downloads/index.html#presentation">Mission</a>
+      <a href="file:///C:/Users/HP/Downloads/index.html#offp">Programme OFFP</a>
+      <a href="file:///C:/Users/HP/Downloads/index.html#vision">Vision</a>
+      <a href="file:///C:/Users/HP/Downloads/index.html#contact">Contact</a>
+      <a href="file:///C:/Users/HP/Downloads/index.html#contact" class="cta">Nous rejoindre</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">✝ Évangélique · Inter-dénominationnelle · Burkina Faso · Fondée en 2016</div>
+      <h1>
+        FONDATION JOSUÉ 1:8
+        <span class="accent">Tout Par la Bible,<br>Avec la Bible,<br>Selon la Bible</span>
+      </h1>
+      <p class="hero-slogan">
+        « Promouvoir la Parole de Dieu dans le quotidien des Hommes »
+      </p>
+      <p class="hero-desc">Structure chrétienne évangélique inter-dénominationnelle née au Burkina Faso en 2016. Notre programme phare, l'OFFP, forme les enfants et les jeunes de 10 à 18 ans à lire, méditer et vivre la Bible en six ans.</p>
+      <div class="hero-actions">
+        <a href="file:///C:/Users/HP/Downloads/index.html#offp" class="btn-orange">Découvrir le programme OFFP</a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#contact" class="btn-outline">Nous rejoindre</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="hero-card-title">✦ Le Verset Fondateur ✦</p>
+      <div class="verse-box">
+        <p>« Que ce livre de la loi ne s'éloigne point de ta bouche ; médite-le jour et nuit, pour agir fidèlement selon tout ce qui y est écrit ; car c'est alors que tu auras du succès dans tes entreprises, c'est alors que tu réussiras. »</p>
+        <cite>— Josué 1:8 (Louis Segond)</cite>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><strong>2016</strong><small>Fondée en</small></div>
+        <div class="hstat"><strong>OFFP</strong><small>Programme phare</small></div>
+        <div class="hstat"><strong>6 ans</strong><small>Cycle complet</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÉSENTATION -->
+<section id="presentation">
+  <div class="inner">
+    <div class="pres-grid">
+      <div class="pres-img reveal">
+        <img src="./Fondation Josué 1_8 – Tout Par la Bible, Avec la Bible, Selon la Bible_files/photo-1529390079861-591de354faf5" alt="Étude biblique">
+        <div class="ref-badge">
+          <p>« Ta parole est une lampe à mes pieds, et une lumière sur mon sentier. »</p>
+          <cite>— Psaumes 119:105</cite>
+        </div>
+      </div>
+      <div class="pres-content reveal">
+        <div class="sec-tag">Qui sommes-nous</div>
+        <h2>Une structure <em>évangélique</em> au service de la Parole</h2>
+        <p>La Fondation Josué 1:8 est une structure chrétienne, évangélique, inter-dénominationnelle, née au Burkina Faso en 2016. Son but est de promouvoir la Parole de Dieu dans le quotidien des Hommes, convaincue que la Bible est tout et a tout pour transformer une vie, une famille et une nation.</p>
+        <p>Notre domaine d'intervention couvre l'éducation chrétienne et la culture. En partenariat avec les églises locales de toutes dénominations, nous déployons des programmes structurés qui permettent aux enfants, aux jeunes et aux familles d'entrer dans une relation directe, profonde et durable avec les Écritures.</p>
+        <div class="identity-tags">
+          <span class="itag">✝ Évangélique</span>
+          <span class="itag">🤝 Inter-dénominationnelle</span>
+          <span class="itag">🇧🇫 Burkina Faso</span>
+          <span class="itag">📅 Fondée en 2016</span>
+          <span class="itag">🎓 Éducation &amp; Culture</span>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <h4>📖 Notre But</h4>
+            <p>Promouvoir la Parole de Dieu dans le quotidien des Hommes.</p>
+          </div>
+          <div class="pillar">
+            <h4>✦ Notre Slogan</h4>
+            <p>Tout par la Bible, avec la Bible, selon la Bible.</p>
+          </div>
+          <div class="pillar">
+            <h4>🎓 Domaine</h4>
+            <p>Éducation chrétienne et culture.</p>
+          </div>
+          <div class="pillar">
+            <h4>🌍 Ouverture</h4>
+            <p>Inter-dénominationnelle, ouverte à toutes les églises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFP -->
+<section id="offp">
+  <div class="inner">
+    <div class="sec-tag">Programme Phare</div>
+    <h2 style="margin-bottom:2.5rem">L'Opération <em>Fils et Filles de la Parole</em></h2>
+    <div class="offp-grid">
+
+      <div class="offp-main reveal">
+        <h3>Opération Fils et Filles de la Parole (OFFP)</h3>
+        <span class="offp-slogan">« Lire, Méditer et Vivre la Bible »</span>
+        <p>L'OFFP est un programme intentionnel de discipulat pour enfants et jeunes de 10 à 18 ans. Organisé autour d'un concours de lecture et de méditation de toute la Bible en six ans, il a pour objectif d'inculquer aux participants les valeurs spirituelles et sociétales promues dans les Écritures en les connectant directement à elles.</p>
+
+        <div class="offp-quote">
+          <p>« Avec l'Opération Fils et Filles de la Parole, nous partons du postulat que la Parole de Dieu "est tout et a tout" pour faire d'un enfant un futur adulte chrétien et citoyen plein d'impacts positifs, sel et lumière pour son environnement. »</p>
+        </div>
+
+        <p>Avec le programme OFFP, c'est un merveilleux voyage d'éducation par, avec et selon la Bible en toute liberté — un parcours de six ans qui transforme durablement la vie des jeunes participants et de leurs familles.</p>
+
+        <div class="fondements">
+          <h4>⛪ Les Fondements Bibliques du Programme</h4>
+          <div class="fonde-item">
+            <span class="fonde-ref">Marc 10:14</span>
+            <p>« Laissez venir à moi les petits enfants, et ne les en empêchez pas… »</p>
+          </div>
+          <div class="fonde-item">
+            <span class="fonde-ref">Jean 1:46</span>
+            <p>« Viens, et vois. »</p>
+          </div>
+          <div class="fonde-item">
+            <span class="fonde-ref">Romains 10:17</span>
+            <p>« Ainsi la foi vient de ce qu'on entend, et ce qu'on entend vient de la Parole de Christ. »</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="offp-side reveal">
+        <div class="side-block">
+          <h4>✅ Conditions de Participation</h4>
+          <ul class="crit-list">
+            <li>Avoir entre 10 et 18 ans, ou avoir des enfants dans cette tranche d'âge</li>
+            <li>Être recommandé par une église locale ou une structure chrétienne reconnue</li>
+            <li>Disposer d'une Bible personnelle</li>
+            <li>Pour les églises : réunir au minimum 15 enfants pour créer un centre de composition, ou s'affilier à un centre de proximité existant</li>
+          </ul>
+          <div class="contrib-box">
+            <strong>5 000 FCFA</strong>
+            <span>de contribution annuelle par participant</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <h4>💰 Financement</h4>
+          <p class="financement-text">La Fondation fonctionne essentiellement grâce aux contributions des participants, des églises, des structures chrétiennes, des particuliers et des partenaires. Chacun peut devenir acteur du programme — par une contribution financière, matérielle ou en compétences. Vous aussi, vous pouvez soutenir ce projet d'envergure.</p>
+        </div>
+
+        <div class="side-block">
+          <h4>🎯 Objectifs du Programme</h4>
+          <ul class="crit-list">
+            <li>Connecter les enfants directement aux Écritures</li>
+            <li>Inculquer les valeurs spirituelles et sociétales de la Bible</li>
+            <li>Former des jeunes disciples capables d'impacts positifs</li>
+            <li>Préparer une génération de citoyens chrétiens engagés</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="inner">
+    <div class="sec-tag reveal">Horizon Stratégique</div>
+    <h2 class="reveal">Notre <em>Vision</em> à Long Terme</h2>
+    <p class="lead reveal">La Fondation Josué 1:8 porte une ambition qui dépasse le cadre associatif pour envisager un impact structurel et durable sur l'éducation chrétienne en Afrique.</p>
+
+    <div class="vision-grid">
+      <div class="vision-card reveal">
+        <span class="vicon">🎓</span>
+        <h3>Partenariat avec une Université Chrétienne</h3>
+        <p>Nouer un partenariat avec une université chrétienne qui pourra accueillir, à partir du baccalauréat, tous les candidats participants réguliers aux différentes étapes du programme OFFP et ayant atteint une certaine moyenne générale, leur ouvrant les portes de l'enseignement supérieur.</p>
+      </div>
+      <div class="vision-card reveal">
+        <span class="vicon">🏛️</span>
+        <h3>Fondation d'une Université Biblique Propre</h3>
+        <p>Fonder une université biblique propre qui accueillera les participants au programme dans toutes les filières de leur choix, tout en y ajoutant une formation théologique solide — pour former des professionnels chrétiens profondément enracinés dans la Parole de Dieu.</p>
+      </div>
+    </div>
+
+    <div class="verset-band reveal">
+      <p class="vt">« Que ce livre de la loi ne s'éloigne point de ta bouche ; médite-le jour et nuit, pour agir fidèlement selon tout ce qui y est écrit ; car c'est alors que tu auras du succès dans tes entreprises, c'est alors que tu réussiras. »</p>
+      <div style="height:1px;background:rgba(245,166,35,0.2);max-width:180px;margin:1.2rem auto;"></div>
+      <p class="vref">— Josué 1:8 (Louis Segond)</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="sec-tag">Nous contacter</div>
+        <h2>Entrons en <em>communion</em></h2>
+        <p>Que vous souhaitiez inscrire vos enfants au programme OFFP, ouvrir un centre de composition dans votre église, devenir partenaire ou soutenir la Fondation, notre équipe est à votre écoute.</p>
+        <div class="cdet">
+          <div class="cdet-icon">📞</div>
+          <div class="cdet-text"><strong>Téléphone 1</strong><span>(+226) 72 84 84 55</span></div>
+        </div>
+        <div class="cdet">
+          <div class="cdet-icon">📞</div>
+          <div class="cdet-text"><strong>Téléphone 2</strong><span>(+226) 74 42 95 74</span></div>
+        </div>
+        <div class="cdet">
+          <div class="cdet-icon">✉️</div>
+          <div class="cdet-text"><strong>Email</strong><span><a href="file:///C:/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f0969f9e949184999f9e9a9f838595c1c8b0979d91999cde939f9d">[email&nbsp;protected]</a></span></div>
+        </div>
+        <div class="cdet">
+          <div class="cdet-icon">🇧🇫</div>
+          <div class="cdet-text"><strong>Pays</strong><span>Ouagadougou, Burkina Faso</span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <h3>✉ Envoyez-nous un message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" placeholder="Votre prénom">
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" placeholder="Votre nom">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" placeholder="votre@email.com">
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" placeholder="(+226) ...">
+          </div>
+          <div class="form-group">
+            <label for="sujet">Objet de votre demande</label>
+            <select id="sujet">
+              <option value="">– Sélectionner –</option>
+              <option>Inscription au programme OFFP</option>
+              <option>Ouvrir un centre de composition</option>
+              <option>Devenir partenaire / Faire un don</option>
+              <option>Partenariat institutionnel (église, école)</option>
+              <option>Renseignements généraux</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Décrivez votre demande…"></textarea>
+          </div>
+          <button class="btn-send" onclick="sendForm()">Envoyer le message</button>
+          <div id="form-success">✅ Message envoyé ! Nous vous répondrons dans les meilleurs délais. Que Dieu vous bénisse.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-stripe"></div>
+  <div class="footer-body">
+    <div class="footer-top">
+      <div class="fbrand">
+        <div class="logo-title">
+          <span class="main" style="color:var(--white)">FONDATION JOSUÉ <em style="color:var(--orange);font-style:normal">1:8</em></span>
+          <span class="sub" style="color:var(--orange-light)">Tout par la Bible, avec la Bible, selon la Bible</span>
+        </div>
+        <p>Structure chrétienne évangélique inter-dénominationnelle fondée en 2016. But : Promouvoir la Parole de Dieu dans le quotidien des Hommes.</p>
+      </div>
+      <div class="fcol">
+        <h5>Navigation</h5>
+        <a href="file:///C:/Users/HP/Downloads/index.html#presentation">Notre Mission</a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#offp">Programme OFFP</a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#vision">Vision Long Terme</a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#contact">Contact</a>
+      </div>
+      <div class="fcol">
+        <h5>Programme OFFP</h5>
+        <a href="file:///C:/Users/HP/Downloads/index.html#">Présentation</a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#">Conditions d'accès</a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#">Ouvrir un centre</a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#">Soutenir / Donner</a>
+      </div>
+      <div class="fcol">
+        <h5>Nous joindre</h5>
+        <a href="tel:+22672848455">(+226) 72 84 84 55</a>
+        <a href="tel:+22674429574">(+226) 74 42 95 74</a>
+        <a href="file:///C:/cdn-cgi/l/email-protection#6a0c05040e0b1e0305040005191f0f5b522a0d070b030644090507"><span class="__cf_email__" data-cfemail="1f7970717b7e6b76707175706c6a7a2e275f78727e7673317c7072">[email&nbsp;protected]</span></a>
+        <a href="file:///C:/Users/HP/Downloads/index.html#">Ouagadougou, Burkina Faso</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fondation Josué 1:8 · Tous droits réservés · Burkina Faso</span>
+      <span class="fverse">« Médite-le jour et nuit… c'est alors que tu réussiras. » – Jos. 1:8</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="file:///C:/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
